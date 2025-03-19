@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Source Code</h1>
-    <p>Github information</p>
+    <h1>App info</h1>
+    <p>Made using Laravel <br> using pointercrate.com API</p>
 @endsection

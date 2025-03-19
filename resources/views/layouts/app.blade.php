@@ -8,8 +8,8 @@
 </head>
 <body>
     <div class='navBar'>
-        <div class='logo'>GDguesser</div>
-        <a href='{{ route('game') }}'>Play</a>
+        <div class='logo'>GDguessr</div>
+        <a href='{{ route('gamemode') }}'>Play</a>
         <a href='{{ route('sCode') }}'>SourceCode</a>
     </div>
     <div class='content'>

@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Choose GameMode</h1>
-    
+    <div class='gameContent'>
+        <iframe width="1500" height="700"
+            src="{{ $apiData }}">
+        </iframe>
+
+    </div>
 @endsection
