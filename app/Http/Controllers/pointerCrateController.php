@@ -18,12 +18,13 @@ class PointerCrateController extends Controller
                     break;
                 }
             }
-        }
+        }        
 
         if ($videoLink) {
             $videoLink = str_replace('watch?v=', 'embed/', $videoLink);
+            $randomStart = rand(0, 90);
+            $videoLink .= "?start={$randomStart}&autoplay=1&mute=1&controls=0&modestbranding=0&showinfo=1";
         }
-
         return view('game', ['apiData' => $videoLink]);
     }
 }

@@ -85,3 +85,17 @@ h1{
     text-transform: uppercase;
     font-size: 1.4rem;
 }
+.title-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100.1%;
+    height: 50px;
+    background-color: var(--background-color);
+    z-index: 10;
+    border-bottom: 1px solid white;
+    transition: 1s;
+}
+iframe{
+    border: 1px solid white;
+}
