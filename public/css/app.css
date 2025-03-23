@@ -16,7 +16,15 @@
     font-style: normal;
 }
 body{
-    background-color: var(--background-color);
+    background:
+    /* top, transparent black, faked with gradient */ 
+    linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ),
+    /* bottom, image */
+    url('images/bg-banner2.jpg');
+    background-size: cover;
 }
 a{
     text-decoration: none;
@@ -90,8 +98,8 @@ h1{
     top: 0;
     left: 0;
     width: 100.3%;
-    height: 50px;
-    background-color: var(--background-color);
+    height: 80px;
+    background-color: black;
     z-index: 10;
     border-bottom: 1px solid white;
 }

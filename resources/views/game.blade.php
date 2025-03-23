@@ -6,17 +6,18 @@
             <iframe muted width="1300" height="700"
                 src="{{ $embedLink }}">
             </iframe>
-            <div class="title-cover"></div>
+            <div class="title-cover">
+                <div style='display: flex; justify-content: center; align-items: center;'>
+                    <form id="guessForm" style="margin-top: 20px;"> 
+                        @csrf
+                        <input autocomplete="off" type="text" id="answer" name="answer" placeholder="type your guess">
+                    </form>
+                    <h3 style="margin-left: 40px;"> Guesses: 0 </h3>
+                </div>
+            </div>
         </div>
 
-        <div style='display: flex; justify-content: center; align-items: center;'>
-            <form id="guessForm" style="margin-top: 20px;"> 
-                @csrf
-                <input type="text" id="answer" name="answer" placeholder="type your guess">
-            </form>
-            <h3 style="margin-left: 40px;"> Guesses: 0 </h3>
-        </div>
-    </div>
+    </div> 
 
     <style>
         .iframe-wrapper {
