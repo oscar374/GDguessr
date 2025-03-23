@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\checkAnswerController;
 use App\Http\Controllers\pointerCrateController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,4 +20,4 @@ Route::get('/sCode', function () {
     return view('sCode');
 })->name('sCode');          
 
-Route::get('/game', [pointerCrateController::class, 'getApiData']);
+Route::get('/game', [pointerCrateController::class, 'getApiData']); 

@@ -89,13 +89,33 @@ h1{
     position: absolute;
     top: 0;
     left: 0;
-    width: 100.1%;
+    width: 100.3%;
     height: 50px;
     background-color: var(--background-color);
     z-index: 10;
     border-bottom: 1px solid white;
-    transition: 1s;
 }
-iframe{
-    border: 1px solid white;
+input{
+    color: black;
+    text-align: center;
+    font-size: 1.6rem;
 }
+
+@keyframes pulseBackgroundRed {
+    0% {
+        background-color: red;
+    }
+    100% {
+        background-color: var(--background-color);
+    }
+}
+@keyframes pulseBackgroundGreen {
+    0% {
+        background-color: green;
+    }
+    100% {
+        background-color: var(--background-color);
+    }
+}
+
+
