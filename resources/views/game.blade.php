@@ -13,11 +13,14 @@
                         <input autocomplete="off" type="text" id="answer" name="answer" placeholder="type your guess">
                     </form>
                     <h3 style="margin-left: 40px;"> Guesses: 0 </h3>
+                    <h2 style="margin-left: 40px;"> </h2>
                 </div>
             </div>
         </div>
 
     </div> 
+
+    <div class='pulseEffect'> </div>
 
     <style>
         .iframe-wrapper {
@@ -37,29 +40,50 @@
 
     <script>
         let guesses = 0;
+        
+        let answer = document.getElementById("answer").value;
+        let levelName = "{{ $levelName }}";
+
+        let hangman = "";
+
+        for(let i = 0; i < levelName.length; i++) {
+            hangman += "_";
+        }
 
         document.getElementById("guessForm").addEventListener("submit", function(event) {
             guesses++;
             document.querySelector('h3').innerHTML = "Guesses: " + guesses;
             event.preventDefault(); 
 
-            let answer = document.getElementById("answer").value;
-            let levelName = "{{ $levelName }}";
-
             if(answer.toLowerCase() == levelName.toLowerCase()) {
                 document.querySelector('body').style.animation = "none";
+                document.querySelector('.pulseEffect').style.animation = "none";
                 setTimeout(() => {
-                    document.querySelector('body').style.animation = "pulseBackgroundGreen 3s forwards";
+                    document.querySelector('.pulseEffect').style.animation = "pulseBackgroundGreen 3s forwards";
                 }, 10);
                 setTimeout(() => {
                     location.reload();
                 }, 1000);
             } else {
                 document.querySelector('body').style.animation = "none";
+                document.querySelector('.pulseEffect').style.animation = "none";
                 setTimeout(() => {
                     document.getElementById("answer").value = "";
-                    document.querySelector('body').style.animation = "pulseBackgroundRed 1s forwards";
+                    document.querySelector('.pulseEffect').style.animation = "pulseBackgroundRed 1s forwards";
                 }, 10);
+            }
+
+            //hungman mechanic
+            if(guesses > 0){
+                hangman = "";
+                for(let i = 0; i < levelName.length; i++) {
+                    if(i < guesses + 1){
+                        hangman += levelName[i];
+                    } else {
+                        hangman += "_";
+                    }
+                }
+                document.querySelector('h2').innerHTML = hangman;
             }
 
         });

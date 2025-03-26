@@ -11,7 +11,7 @@ class PointerCrateController extends Controller
         $data = $response->json();
 
         $levelName = $data['data']['name'] ?? 'Unknown Level';
-        $videoLink = 'https://www.youtube.com/watch?v=Si0aV7WkzpA';
+        $videoLink = 'https://www.youtube.com/watch?v=G5xZf8sP2W0';
         
         if (isset($data['data']['records']) && !empty($data['data']['records'])) {
             foreach ($data['data']['records'] as $record) {
@@ -36,3 +36,5 @@ class PointerCrateController extends Controller
         return view('game', ['embedLink' => $embedLink, 'levelName' => $levelName]);
     }
 }
+
+

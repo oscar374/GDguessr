@@ -103,27 +103,33 @@ h1{
     z-index: 10;
     border-bottom: 1px solid white;
 }
-input{
-    color: black;
-    text-align: center;
-    font-size: 1.6rem;
-}
 
 @keyframes pulseBackgroundRed {
     0% {
         background-color: red;
     }
     100% {
-        background-color: var(--background-color);
+        background-color: rgba(0, 0, 0, 0);
     }
 }
 @keyframes pulseBackgroundGreen {
     0% {
-        background-color: green;
+        background-color: lightgreen;
     }
     100% {
-        background-color: var(--background-color);
+        background-color: rgba(0, 0, 0, 0);
     }
 }
 
+.pulseEffect{
+    background-color: rgba(0, 0, 0, 0);
+    width: 100vw;
+    height: 100vh;
+    z-index: 400;
+    position: fixed;
+    z-index: -3;
+}
+input{
+    color: black;
+}
 
