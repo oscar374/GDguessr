@@ -40,17 +40,10 @@
 
     <script>
         let guesses = 0;
-        
-        let answer = document.getElementById("answer").value;
         let levelName = "{{ $levelName }}";
 
-        let hangman = "";
-
-        for(let i = 0; i < levelName.length; i++) {
-            hangman += "_";
-        }
-
         document.getElementById("guessForm").addEventListener("submit", function(event) {
+            let answer = document.getElementById("answer").value;
             guesses++;
             document.querySelector('h3').innerHTML = "Guesses: " + guesses;
             event.preventDefault(); 
@@ -71,21 +64,24 @@
                     document.getElementById("answer").value = "";
                     document.querySelector('.pulseEffect').style.animation = "pulseBackgroundRed 1s forwards";
                 }, 10);
-            }
 
-            //hungman mechanic
-            if(guesses > 0){
-                hangman = "";
-                for(let i = 0; i < levelName.length; i++) {
-                    if(i < guesses + 1){
-                        hangman += levelName[i];
-                    } else {
-                        hangman += "_";
+                 if(guesses > 0){
+                    let hangman = "";
+                    let revealedCount = 0;
+
+                    for(let i = 0; i < levelName.length; i++) {
+                        if(revealedCount < guesses && levelName[i] !== " ") {c
+                            hangman += levelName[i];
+                            revealedCount++;
+                        } else if(levelName[i] === " ") {
+                            hangman += " "; 
+                        } else {
+                            hangman += "_";
+                        }
                     }
-                }
                 document.querySelector('h2').innerHTML = hangman;
+                  }
             }
-
         });
     </script>  
-@endsection
+@endsection     

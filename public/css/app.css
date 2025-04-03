@@ -17,14 +17,13 @@
 }
 body{
     background:
-    /* top, transparent black, faked with gradient */ 
-    linear-gradient(
-      rgba(0, 0, 0, 0.7), 
-      rgba(0, 0, 0, 0.7)
-    ),
-    /* bottom, image */
-    url('images/bg-banner2.jpg');
+    linear-gradient(0deg, rgba(252,70,107,0.5) 0%, rgba(255,144,83,0.5) 50%, rgba(252,70,70,0.5) 100%),  url('images/bg-banner2.jpg');
     background-size: cover;
+    animation-name: Gradient;
+    animation-duration: 7.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    transition:  0.3s;
 }
 a{
     text-decoration: none;
@@ -133,3 +132,14 @@ input{
     color: black;
 }
 
+@keyframes Gradient{
+    0% {
+        background-position: 50% 0%
+    }
+    50% {
+        background-position: 50% 100%
+    }
+    100% {
+        background-position: 50% 0%
+    }
+}
